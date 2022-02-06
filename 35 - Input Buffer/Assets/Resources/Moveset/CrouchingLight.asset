@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67394ff596732e940950439b6b1effd2, type: 3}
   m_Name: CrouchingLight
   m_EditorClassIdentifier: 
-  moveSlot: 2
-  input: 0100000009000000
-  priority: 1
-  bufferWindow: 5
-  clearsBuffer: 1
+  _moveSlot: 2
+  _input: 0100000009000000
+  _priority: 1
+  _clearsBuffer: 1

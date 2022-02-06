@@ -4,60 +4,53 @@ using UnityEngine;
 
 public class InputBuffer : MonoBehaviour
 {
-    [SerializeField] List<GameInputs> buffer;
-    [SerializeField] List<SO_Move> moveset;
-    int currentInputPriority;
+    [SerializeField] List<GameInputs> _buffer;
+    [SerializeField] List<SO_Move> _moveset;
 
     private void Awake()
     {
-        moveset.Sort(SortByPriority);
-    }
-    private void Update()
-    {
+        _moveset.Sort(SortByPriority);
     }
     public void AddInput(GameInputs input)
     {
-        buffer.Add(input);
+        _buffer.Add(input);
 
-        if (hasMove(buffer))
-            SendExecution(buffer);
+        if (hasMove(_buffer))
+            SendExecution(_buffer);
     }
     public bool hasMove(List<GameInputs> inputedInputs)
     {
-        for (int i = 0; i < moveset.Count; i++)
+        for (int i = 0; i < _moveset.Count; i++)
         {
-            if (moveset[i].isMoveExecuted(inputedInputs))
+            if (_moveset[i].isMoveExecuted(inputedInputs))
                 return true;
         }
+
         return false;
     }
     public void SendExecution(List<GameInputs> inputedInputs)
     {
-        for (int i = 0; i < moveset.Count; i++)
+        for (int i = 0; i < _moveset.Count; i++)
         {
-            if (moveset[i].isMoveExecuted(inputedInputs))
+            if (_moveset[i].isMoveExecuted(inputedInputs))
             {
-                ExecuteMove(moveset[i].GetMove(), moveset[i].GetPriority());
+                ExecuteMove(_moveset[i].MoveSlot, _moveset[i].Priority);
 
-                if (moveset[i].clearsBuffer)
-                    buffer.Clear();
+                if (_moveset[i].ClearsBuffer)
+                    _buffer.Clear();
+
                 break;
             }
         }
-    }
-    public int SortByPriority(SO_Move move1, SO_Move move2)
-    {
-        return Comparer<int>.Default.Compare(move2.GetPriority(), move1.GetPriority());
     }
     public void ExecuteMove(Moveset move, int movePriority)
     {
         if (move == Moveset.None)
             return;
 
+        int currentInputPriority = 0;
         if (movePriority >= currentInputPriority)
-        {
             currentInputPriority = movePriority;
-        }
         else
             return;
 
@@ -100,5 +93,9 @@ public class InputBuffer : MonoBehaviour
         }
 
         currentInputPriority = 0;
+    }
+    public int SortByPriority(SO_Move move1, SO_Move move2)
+    {
+        return Comparer<int>.Default.Compare(move2.Priority, move1.Priority);
     }
 }

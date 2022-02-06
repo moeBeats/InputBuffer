@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67394ff596732e940950439b6b1effd2, type: 3}
   m_Name: SpecialOne
   m_EditorClassIdentifier: 
-  moveSlot: 7
-  input: 01000000020000000500000009000000
-  priority: 3
-  bufferWindow: 15
-  clearsBuffer: 1
+  _moveSlot: 7
+  _input: 01000000020000000500000009000000
+  _priority: 3
+  _clearsBuffer: 1

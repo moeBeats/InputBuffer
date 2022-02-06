@@ -5,21 +5,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Move" ,menuName = "Character Move")]
 public class SO_Move : ScriptableObject
 {
-    [SerializeField] Moveset moveSlot;
-    [SerializeField] List<GameInputs> input;
-    [SerializeField] int priority = 0;
-    [SerializeField] int bufferWindow = 15;
-    [SerializeField] public bool clearsBuffer;
+    [SerializeField] Moveset _moveSlot;
+    [SerializeField] List<GameInputs> _input;
+    [SerializeField] int _priority = 0;
+    [SerializeField] bool _clearsBuffer = true;
+
+    public Moveset MoveSlot { get { return _moveSlot; } }
+    public int Priority { get { return _priority; } }
+    public bool ClearsBuffer { get { return _clearsBuffer; } }
 
     public bool isMoveExecuted(List<GameInputs> inputedInputs)
     {
         int inputIndex = 0;
         for (int i = 0; i < inputedInputs.Count; i++)
         {
-            if (inputedInputs[i] == input[inputIndex])
+            if (inputedInputs[i] == _input[inputIndex])
             {
                 inputIndex++;
-                if (inputIndex == input.Count)
+                if (inputIndex == _input.Count)
                 {
                     return true;
                 }
@@ -27,13 +30,4 @@ public class SO_Move : ScriptableObject
         }
         return false;
     }
-    public int GetPriority()
-    {
-        return priority;
-    }
-    public Moveset GetMove()
-    {
-        return moveSlot;
-    }
-
 }

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67394ff596732e940950439b6b1effd2, type: 3}
   m_Name: StandingLight
   m_EditorClassIdentifier: 
-  moveSlot: 1
-  input: 09000000
-  priority: 0
-  bufferWindow: 5
-  clearsBuffer: 1
+  _moveSlot: 1
+  _input: 09000000
+  _priority: 0
+  _clearsBuffer: 1
