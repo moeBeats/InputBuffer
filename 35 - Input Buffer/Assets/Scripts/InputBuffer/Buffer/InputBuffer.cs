@@ -18,7 +18,7 @@ public class InputBuffer : MonoBehaviour
         if (hasMove(_buffer))
             SendExecution(_buffer);
     }
-    public bool hasMove(List<GameInputs> inputedInputs)
+    bool hasMove(List<GameInputs> inputedInputs)
     {
         for (int i = 0; i < _moveset.Count; i++)
         {
@@ -28,7 +28,7 @@ public class InputBuffer : MonoBehaviour
 
         return false;
     }
-    public void SendExecution(List<GameInputs> inputedInputs)
+    void SendExecution(List<GameInputs> inputedInputs)
     {
         for (int i = 0; i < _moveset.Count; i++)
         {
@@ -43,7 +43,7 @@ public class InputBuffer : MonoBehaviour
             }
         }
     }
-    public void ExecuteMove(Moveset move, int movePriority)
+    void ExecuteMove(Moveset move, int movePriority)
     {
         if (move == Moveset.None)
             return;
@@ -94,7 +94,7 @@ public class InputBuffer : MonoBehaviour
 
         currentInputPriority = 0;
     }
-    public int SortByPriority(SO_Move move1, SO_Move move2)
+    int SortByPriority(SO_Move move1, SO_Move move2)
     {
         return Comparer<int>.Default.Compare(move2.Priority, move1.Priority);
     }
