@@ -43,9 +43,9 @@ public class InputBuffer : MonoBehaviour
             }
         }
     }
-    void ExecuteMove(Moveset move, int movePriority)
+    void ExecuteMove(MoveSlots moveSlot, int movePriority)
     {
-        if (move == Moveset.None)
+        if (moveSlot == MoveSlots.None)
             return;
 
         int currentInputPriority = 0;
@@ -54,41 +54,41 @@ public class InputBuffer : MonoBehaviour
         else
             return;
 
-        switch (move)
+        switch (moveSlot)
         {
-            case Moveset.StandingLight:
-                Debug.Log(move);
+            case MoveSlots.StandingLight:
+                Debug.Log(moveSlot);
                 break;
-            case Moveset.CrouchingLight:
-                Debug.Log(move);
-                break;
-
-            case Moveset.StandingMedium:
-                Debug.Log(move);
-                break;
-            case Moveset.CrouchingMedium:
-                Debug.Log(move);
+            case MoveSlots.CrouchingLight:
+                Debug.Log(moveSlot);
                 break;
 
-            case Moveset.StandingHeavy:
-                Debug.Log(move);
+            case MoveSlots.StandingMedium:
+                Debug.Log(moveSlot);
                 break;
-            case Moveset.CrouchingHeavy:
-                Debug.Log(move);
-                break;
-
-            case Moveset.SpecialOne:
-                Debug.Log(move);
-                break;
-            case Moveset.SpecialTwo:
-                Debug.Log(move);
-                break;
-            case Moveset.SpecialThree:
-                Debug.Log(move);
+            case MoveSlots.CrouchingMedium:
+                Debug.Log(moveSlot);
                 break;
 
-            case Moveset.Super:
-                Debug.Log(move);
+            case MoveSlots.StandingHeavy:
+                Debug.Log(moveSlot);
+                break;
+            case MoveSlots.CrouchingHeavy:
+                Debug.Log(moveSlot);
+                break;
+
+            case MoveSlots.SpecialOne:
+                Debug.Log(moveSlot);
+                break;
+            case MoveSlots.SpecialTwo:
+                Debug.Log(moveSlot);
+                break;
+            case MoveSlots.SpecialThree:
+                Debug.Log(moveSlot);
+                break;
+
+            case MoveSlots.Super:
+                Debug.Log(moveSlot);
                 break;
         }
 

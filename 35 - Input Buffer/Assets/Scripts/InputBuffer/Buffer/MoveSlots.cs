@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Moveset
+public enum MoveSlots
 {
     None,
     StandingLight, CrouchingLight,
