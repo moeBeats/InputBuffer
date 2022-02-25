@@ -24,7 +24,7 @@ MonoBehaviour:
     _window: 10
   - _input: 4
     _window: 10
-  - _input: 12
+  - _input: 10
     _window: 10
   _priority: 5
   _clearsBuffer: 1

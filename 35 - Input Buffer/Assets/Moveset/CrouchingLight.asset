@@ -19,4 +19,4 @@ MonoBehaviour:
   - _input: 10
     _window: 3
   _priority: 1
-  _clearsBuffer: 0
+  _clearsBuffer: 1
