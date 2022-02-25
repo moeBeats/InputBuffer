@@ -12,12 +12,13 @@ public class InputBuffer : MonoBehaviour
     private void Awake()
     {
         _moveset.Sort(SortByPriority);
-        //_testBuffer = new GameInput[_bufferSize];
+        //_buffer = new GameInput[_bufferSize];
     }
     private void FixedUpdate()
     {
         if (0 < _buffer.Count)
-            _buffer[_buffer.Count - 1].Window++;
+         _buffer[_buffer.Count - 1].Window++;
+
     }
     public void AddInput(GameInput input)
     {
@@ -45,7 +46,7 @@ public class InputBuffer : MonoBehaviour
                 ExecuteMove(_moveset[i].MoveSlot, _moveset[i].Priority);
 
                 if (_moveset[i].ClearsBuffer)
-                    _buffer.Clear();
+                   _buffer.Clear();
 
                 break;
             }
