@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 1913939019}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,13 +302,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3a17d72535805448ac7159c70a0d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buffer: 
+  _buffer: []
+  _testBuffer: []
+  _bufferSize: 15
   _moveset:
-  - {fileID: 11400000, guid: b4cf296b70385ff47be14d23f1e52143, type: 2}
   - {fileID: 11400000, guid: 6424a4b3c6cbccd41856decd46c856e3, type: 2}
-  - {fileID: 11400000, guid: d36942ca1a8eea24dbfc7e97c2ec7e6e, type: 2}
-  - {fileID: 11400000, guid: 1d21d80cf0f5ab94a85f38a80d9b61e0, type: 2}
-  - {fileID: 11400000, guid: 14754ea7ca3f4e74bb81a01b1f18a3ff, type: 2}
+  - {fileID: 11400000, guid: cb3f83e3c14a8e04989b4c8017173edf, type: 2}
+  - {fileID: 11400000, guid: b4cf296b70385ff47be14d23f1e52143, type: 2}
+  - {fileID: 11400000, guid: 58ee89ed548a76541a02b72190d2c0a2, type: 2}
 --- !u!114 &1913939020
 MonoBehaviour:
   m_ObjectHideFlags: 0

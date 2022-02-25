@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class InputBuffer : MonoBehaviour
 {
-    [SerializeField] List<GameInputs> _buffer;
+    [SerializeField] List<GameInput> _buffer;
+    //[SerializeField] GameInput[] _testBuffer;
+    //[SerializeField] int _bufferSize;
     [SerializeField] List<SO_Move> _moveset;
 
     private void Awake()
     {
         _moveset.Sort(SortByPriority);
+        //_testBuffer = new GameInput[_bufferSize];
     }
-    public void AddInput(GameInputs input)
+    private void FixedUpdate()
+    {
+        if (0 < _buffer.Count)
+            _buffer[_buffer.Count - 1].Window++;
+    }
+    public void AddInput(GameInput input)
     {
         _buffer.Add(input);
 
         if (hasMove(_buffer))
             SendExecution(_buffer);
     }
-    bool hasMove(List<GameInputs> inputedInputs)
+    bool hasMove(List<GameInput> inputedInputs)
     {
         for (int i = 0; i < _moveset.Count; i++)
         {
@@ -28,7 +36,7 @@ public class InputBuffer : MonoBehaviour
 
         return false;
     }
-    void SendExecution(List<GameInputs> inputedInputs)
+    void SendExecution(List<GameInput> inputedInputs)
     {
         for (int i = 0; i < _moveset.Count; i++)
         {

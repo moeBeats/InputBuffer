@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: StandingLight
   m_EditorClassIdentifier: 
   _moveSlot: 1
-  _input: 09000000
+  _input:
+  - _input: 10
+    _window: 3
   _priority: 0
-  _clearsBuffer: 1
+  _clearsBuffer: 0

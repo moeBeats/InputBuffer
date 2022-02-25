@@ -1,5 +1,7 @@
-public enum GameInputs
+public enum GameBinds
 {
+    none,
+
     downback, down, downforward,
     back, nuetral, forward,
     upback, up, upforward,

@@ -10,9 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67394ff596732e940950439b6b1effd2, type: 3}
-  m_Name: SpecialOne
+  m_Name: SpecialTwo
   m_EditorClassIdentifier: 
-  _moveSlot: 7
-  _input: 01000000020000000500000009000000
-  _priority: 3
+  _moveSlot: 8
+  _input:
+  - _input: 6
+    _window: 10
+  - _input: 3
+    _window: 10
+  - _input: 2
+    _window: 10
+  - _input: 1
+    _window: 10
+  - _input: 4
+    _window: 10
+  - _input: 12
+    _window: 10
+  _priority: 5
   _clearsBuffer: 1
