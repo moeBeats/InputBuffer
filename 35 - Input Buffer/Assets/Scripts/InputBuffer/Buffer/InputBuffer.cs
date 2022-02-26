@@ -6,9 +6,8 @@ public class InputBuffer : MonoBehaviour
 {
     [SerializeField] List<GameInput> _buffer;
     //[SerializeField] GameInput[] _testBuffer;
-    //[SerializeField] int _bufferSize;
+    [SerializeField] float _bufferSize;
     [SerializeField] List<SO_Move> _moveset;
-
     private void Awake()
     {
         _moveset.Sort(SortByPriority);
@@ -17,15 +16,20 @@ public class InputBuffer : MonoBehaviour
     private void FixedUpdate()
     {
         if (0 < _buffer.Count)
-         _buffer[_buffer.Count - 1].Window++;
+         _buffer[_buffer.Count - 1].Window += 1;
 
     }
     public void AddInput(GameInput input)
     {
         _buffer.Add(input);
-
+        StartCoroutine(CO_RemoveInput(input));
         if (hasMove(_buffer))
             SendExecution(_buffer);
+    }
+    IEnumerator CO_RemoveInput(GameInput input)
+    {
+        yield return new WaitForSeconds(_bufferSize);
+        _buffer.Remove(input);
     }
     bool hasMove(List<GameInput> inputedInputs)
     {

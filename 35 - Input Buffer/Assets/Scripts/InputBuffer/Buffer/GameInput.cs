@@ -6,10 +6,10 @@ using UnityEngine;
 public class GameInput
 {
     [SerializeField] GameBinds _input;
-    [SerializeField] int _window = 0;
+    [SerializeField] float _window = 0;
 
     public GameBinds Input { get { return _input; } }
-    public int Window { get { return _window; } set { _window = value; } }
+    public float Window { get { return _window; } set { _window = value; } }
 
     public GameInput(GameBinds input)
     {
